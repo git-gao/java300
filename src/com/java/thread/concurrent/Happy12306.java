@@ -48,7 +48,7 @@ class Passenger extends Thread {
 
 }
 
-// 购票
+// 火车票网
 class HappyWeb12306 implements Runnable{
     List<Integer> available;// 可用位置
     String name; // 名称
