@@ -1,13 +1,15 @@
 package com.java.reflection;
 
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
  * 利用反射机制获取类的所有信息
+ * 三种方式
+ * 1. 类.class
+ * 2. 对象.getClass()
+ * 3. Class.forName("包名.类名")
  */
 public class TestReflection {
     public static void main(String[] args) {

@@ -20,9 +20,12 @@ public class LambdaTest2 {
 
         //
         interest = (a, b) -> a + b;
-        interest = (a, b) -> 100;
-
         System.out.println(interest.lambda(1, 3));
+
+        // 直接写返回值
+        interest = (a, b) -> 100;
+        System.out.println(interest.lambda(1, 3));
+
     }
 }
 
