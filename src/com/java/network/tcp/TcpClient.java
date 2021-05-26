@@ -20,7 +20,7 @@ public class TcpClient {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("请输入用户名:");
         String uname = reader.readLine();
-        System.out.println("请输入用户名:");
+        System.out.println("请输入密码:");
         String password = reader.readLine();
         String data = uname + "&" +password;
         dos.writeUTF(data);

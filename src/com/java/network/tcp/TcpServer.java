@@ -3,6 +3,7 @@ package com.java.network.tcp;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -20,10 +21,17 @@ public class TcpServer {
         System.out.println("一个客户端创建了连接");
         // 3. 操作输入输出
         // 输出
-        DataInputStream dis = new DataInputStream(client.getInputStream());
+        String ip = client.getInetAddress().getHostAddress();
+        InputStream dis = client.getInputStream();
+        byte[] buf = new byte[1024];
+        int len = dis.read(buf);
+        String text = new String(buf,0,len);
+        System.out.println(ip+":"+text);
         String uname = "";
         String password = "";
-        String[] dataArray = dis.readUTF().split("&");
+        //DataInputStream dis = new DataInputStream(client.getInputStream());
+        //String[] dataArray = dis.readUTF().split("&");
+        String[] dataArray = text.split("&");
         for (String data: dataArray) {
             String[] userInfo = data.split("=");
             if (userInfo[0].equals("uname")) {

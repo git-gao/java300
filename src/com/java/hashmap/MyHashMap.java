@@ -73,12 +73,12 @@ public class MyHashMap {
             size++;
             /*// 写法二
             Node t = tnode;
-            if (t.key.equals(key)) {
+            if (t.key.EqualsTest(key)) {
                 System.out.println("key 重复了！");
                 t.value = value;
             } else {
                 while (t.next != null) {
-                    if (t.next.key.equals(key)) {
+                    if (t.next.key.EqualsTest(key)) {
                         t.next.value = value;
                         return;
                     } else {
